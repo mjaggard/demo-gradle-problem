@@ -1,0 +1,30 @@
+plugins {
+    id 'billforward.java-conventions'
+}
+
+group 'com.bf'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'org.glassfish:javax.el:3.0.0'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.8.2'
+    testImplementation 'org.dbunit:dbunit:2.7.3'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+    }
+}
+
+bootJar {
+    mainClass.set('MainAgent')
+}
